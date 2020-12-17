@@ -5,3 +5,4 @@
 - spring.datasource.url=jdbc:postgresql://localhost:5432(стандартный порт, изменить если другой)/вставить навзание своей БД
 - spring.datasource.username=ввести свой username
 - spring.datasource.password=ввести свой password
+- Программа сама создаст нужные таблицы.
