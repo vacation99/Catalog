@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Filter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h2>Фильтр</h2>
+<table>
+    <tr>
+        <td th:text="'ID: ' + ${filter.id}"/>
+    </tr>
+    <tr>
+       <td th:text="'Название: ' + ${filter.name}"/>
+    </tr>
+    <tr>
+        <td th:text="'Описание: ' + ${filter.description}"/>
+    </tr>
+</table> <br/> <hr/> <br/>
+
+<div>
+    <a href="/catalog">Вернуться на главную</a>
+</div>
+</body>
+</html>

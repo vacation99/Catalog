@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Catalog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h2>Каталог</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Описание</th>
+        <th colspan="2">Действия</th>
+    </tr>
+    <tr th:each="el : ${model}">
+        <td th:text="${el.id}"/>
+        <td th:text="${el.name}"/>
+        <td th:text="${el.description}"/>
+        <td><a th:href="'/product/' + ${el.id}">Редактировать</a></td>
+        <td><a th:href="'/remove/' + ${el.id}">Удалить</a></td>
+    </tr>
+</table> <br/>
+
+<div>
+    <a href="/addProduct">Добавить продукт</a>
+</div> <br/>
+
+<form th:action="@{/filter}" th:method="post">
+    <h2>Поиск</h2>
+    <select name="nameFilter">
+        <option th:each="po : ${model}" th:text="${po.name}"/>
+    </select>
+    <button type="submit">Поиск</button>
+</form> <br/> <hr/> <br/>
+
+<a href="/clearTable">Отчистить таблицу</a>
+</body>
+</html>
